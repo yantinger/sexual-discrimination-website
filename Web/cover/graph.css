@@ -1,0 +1,22 @@
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', '家庭經濟來源'],
+          ['父親',     85],
+          ['母親',      24],
+          ['兩者皆是',  190],
+          ['其他', 16],
+        ]);
+
+        var options = {
+          title: '家中經濟來源'
+          
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
